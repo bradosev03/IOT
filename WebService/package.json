@@ -1,0 +1,16 @@
+{
+  "name": "iot_restful",
+  "version": "0.0.1",
+  "description": "A RestFUL API connecting MongoDB to Mobile/Web applications",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "RestFUL",
+    "IOT"
+  ],
+  "author": "Brandon Radosevich",
+  "license": "ISC"
+}
