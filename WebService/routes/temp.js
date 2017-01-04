@@ -15,9 +15,9 @@ var mongoose = require("mongoose");
 module.exports = function(app){
   router.use(function(req,res,next){
     var limit;
-    var data = {
+    var response = {
       "Success" : true,
-      "Data": ""
+      "Temperature": ""
     };
     if (req.query['limit'] != null){
       limit = parseInt(req.query['limit']);
@@ -33,8 +33,8 @@ module.exports = function(app){
           connection.db.collection("Temperature", function(err, collection){
              collection.find().limit(limit).sort({$natural:-1}).toArray(function(err,data){
                console.log(data); // it will print your collection data
-               data["Data"]  = data;
-               res.json(data);
+               response["Temperature"]  = data;
+               res.json(response);
                console.log("here");
                return;
              });
@@ -51,8 +51,8 @@ module.exports = function(app){
             connection.db.collection("Temperature", function(err, collection){
                 collection.find({}).toArray(function(err, data){
                     console.log(data); // it will print your collection data
-                    data["Data"]  = data;
-                    res.json(data);
+                    response["Temperature"]  = data;
+                    res.json(response);
                     console.log("here");
                     return;
                 });//end
